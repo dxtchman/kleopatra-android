@@ -106,7 +106,7 @@ object PgpOps {
         val options: ProducerOptions = if (encrypt) {
             val enc = EncryptionOptions()
             recipients.forEach { enc.addRecipient(it) }
-            if (!password.isNullOrEmpty()) enc.addPassphrase(Passphrase.fromPassword(password))
+            if (!password.isNullOrEmpty()) enc.addMessagePassphrase(Passphrase.fromPassword(password))
             if (signer != null) {
                 val sign = SigningOptions()
                 sign.addInlineSignature(protector(signer.passphrase), signer.ring, sigType)
