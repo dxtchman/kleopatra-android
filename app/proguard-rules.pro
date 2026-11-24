@@ -1,0 +1,5 @@
+-keep class org.bouncycastle.** { *; }
+-keep class org.pgpainless.** { *; }
+-dontwarn org.bouncycastle.**
+-dontwarn org.slf4j.**
+-dontwarn javax.naming.**
